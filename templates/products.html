@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>UcyAegis Products</title>
+
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css') }}">
+
+    <link rel="stylesheet" href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+</head>
+
+<body>
+
+    <!-- PARTICLES -->
+    <div id="particles-js"></div>
+
+    <!-- BACKGROUND -->
+    <div class="background"></div>
+
+    <!-- CYBER GRID -->
+    <div class="cyber-grid"></div>
+
+    <!-- NAVBAR -->
+    <nav>
+
+        <div class="logo-container">
+
+            <img src="{{ url_for('static', filename='images/logo.jpg') }}" alt="Logo">
+
+            <h1>UcyAegis</h1>
+
+        </div>
+
+        <ul>
+
+            <li><a href="{{ url_for('home') }}">Home</a></li>
+            <li><a href="{{ url_for('home') }}#about">About</a></li>
+            <li><a href="{{ url_for('home') }}#services">Services</a></li>
+
+            <li><a href="{{ url_for('products') }}">Products</a></li>
+
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+    <section class="hero">
+
+        <h2>
+            Our Cybersecurity Products
+        </h2>
+
+        <p>
+            Advanced AI-Powered Platforms & Enterprise Security Solutions
+        </p>
+
+    </section>
+
+    <!-- PRODUCTS -->
+    <section class="section" data-aos="fade-up">
+
+        <h2>Products & Platforms</h2>
+
+        <div class="cards">
+
+            <!-- PRODUCT 1 -->
+            <div class="card">
+
+                <h3>UcyScan</h3>
+
+                <p>
+                    AI-powered website vulnerability scanner
+                    designed for businesses and developers.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- PRODUCT 2 -->
+            <div class="card">
+
+                <h3>UcyVault</h3>
+
+                <p>
+                    Secure encrypted password and file
+                    management platform.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- PRODUCT 3 -->
+            <div class="card">
+
+                <h3>Cyber Academy</h3>
+
+                <p>
+                    Practical cybersecurity training labs,
+                    certifications & learning platform.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- PRODUCT 4 -->
+            <div class="card">
+
+                <h3>Threat Intelligence</h3>
+
+                <p>
+                    Real-time cyber attack monitoring,
+                    intelligence & analytics systems.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- PRODUCT 5 -->
+            <div class="card">
+
+                <h3>Cloud Shield</h3>
+
+                <p>
+                    Enterprise-grade cloud security
+                    protection and monitoring.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+            <!-- PRODUCT 6 -->
+            <div class="card">
+
+                <h3>AI SOC</h3>
+
+                <p>
+                    AI-powered Security Operations Center
+                    for automated threat detection.
+                </p>
+
+                <a href="#" class="btn">
+                    Learn More
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+
+        <p>
+            © 2026 UcyAegis | Secure The Future
+        </p>
+
+    </footer>
+
+    <!-- MAIN JS -->
+    <script src="{{ url_for('static', filename='js/main.js') }}"></script>
+
+    <!-- AOS -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+            duration:1200,
+            once:true
+        });
+
+    </script>
+
+    <!-- PARTICLES -->
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+
+        particlesJS("particles-js", {
+
+            "particles": {
+
+                "number": {
+                    "value": 80
+                },
+
+                "color": {
+                    "value": "#00ffff"
+                },
+
+                "shape": {
+                    "type": "circle"
+                },
+
+                "opacity": {
+                    "value": 0.5
+                },
+
+                "size": {
+                    "value": 3
+                },
+
+                "line_linked": {
+
+                    "enable": true,
+
+                    "distance": 150,
+
+                    "color": "#00ffff",
+
+                    "opacity": 0.4,
+
+                    "width": 1
+
+                },
+
+                "move": {
+
+                    "enable": true,
+
+                    "speed": 2
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>

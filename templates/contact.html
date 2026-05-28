@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>Contact | UcyAegis</title>
+
+    <!-- MAIN CSS -->
+    <link rel="stylesheet"
+          href="{{ url_for('static',
+          filename='css/main.css') }}">
+
+    <!-- AOS -->
+    <link rel="stylesheet"
+          href="https://unpkg.com/aos@2.3.1/dist/aos.css"/>
+
+</head>
+
+<body>
+
+    <!-- PARTICLES -->
+    <div id="particles-js"></div>
+
+    <!-- BACKGROUND -->
+    <div class="background"></div>
+
+    <!-- CYBER GRID -->
+    <div class="cyber-grid"></div>
+
+    <!-- NAVBAR -->
+
+    <nav>
+
+        <div class="logo-container">
+
+            <img src="{{ url_for('static',
+            filename='images/logo.jpg') }}"
+            alt="Logo">
+
+            <h1>UcyAegis</h1>
+
+        </div>
+
+        <ul>
+
+            <li>
+                <a href="{{ url_for('home') }}">
+                    Home
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}#about">
+                    About
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('home') }}#services">
+                    Services
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('products') }}">
+                    Products
+                </a>
+            </li>
+
+            <li>
+                <a href="{{ url_for('contact') }}">
+                    Contact
+                </a>
+            </li>
+
+        </ul>
+
+    </nav>
+
+    <!-- HERO -->
+
+    <section class="hero">
+
+        <h2 data-aos="fade-up">
+
+            Contact UcyAegis
+
+        </h2>
+
+        <p data-aos="fade-up"
+           data-aos-delay="200">
+
+            Secure Your Business With
+            Next Generation Cybersecurity Solutions
+
+        </p>
+
+    </section>
+
+    <!-- CONTACT SECTION -->
+
+    <section class="section">
+
+        <h2 data-aos="fade-up">
+
+            Get In Touch
+
+        </h2>
+
+        <!-- CONTACT INFO -->
+
+        <div class="cards"
+             style="margin-bottom:60px;">
+
+            <!-- EMAIL -->
+
+            <div class="card"
+                 data-aos="fade-up">
+
+                <h3>
+
+                    Company Email
+
+                </h3>
+
+                <p>
+
+                    ucyaegis.security@gmail.com
+
+                </p>
+
+            </div>
+
+            <!-- PHONE -->
+
+            <div class="card"
+                 data-aos="fade-up"
+                 data-aos-delay="150">
+
+                <h3>
+
+                    Phone Number
+
+                </h3>
+
+                <p>
+
+                    +91 9266350324
+
+                </p>
+
+            </div>
+
+            <!-- ADDRESS -->
+
+            <div class="card"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
+                <h3>
+
+                    Address
+
+                </h3>
+
+                <p>
+
+                    Gurugram, Haryana, India
+
+                </p>
+
+            </div>
+
+        </div>
+
+        <!-- FLASH MESSAGES -->
+
+        {% with messages =
+        get_flashed_messages(with_categories=true) %}
+
+            {% if messages %}
+
+                {% for category, message in messages %}
+
+                    <div class="flash {{ category }}">
+
+                        {{ message }}
+
+                    </div>
+
+                {% endfor %}
+
+            {% endif %}
+
+        {% endwith %}
+
+        <!-- CONTACT FORM -->
+
+        <form
+            method="POST"
+            action="/send-message"
+            data-aos="zoom-in"
+        >
+
+            <input
+                type="text"
+                name="name"
+                placeholder="Your Name"
+                required
+            >
+
+            <input
+                type="email"
+                name="email"
+                placeholder="Your Email"
+                required
+            >
+
+            <textarea
+                name="message"
+                rows="7"
+                placeholder="Your Message"
+                required
+            ></textarea>
+
+            <button type="submit">
+
+                Send Message
+
+            </button>
+
+        </form>
+
+    </section>
+
+    <!-- SERVICES SECTION -->
+
+    <section class="section">
+
+        <h2 data-aos="fade-up">
+
+            Why Choose UcyAegis?
+
+        </h2>
+
+        <div class="cards">
+
+            <div class="card"
+                 data-aos="fade-up">
+
+                <h3>
+
+                    Penetration Testing
+
+                </h3>
+
+                <p>
+
+                    Advanced offensive security testing
+                    for websites, APIs, and enterprise systems.
+
+                </p>
+
+            </div>
+
+            <div class="card"
+                 data-aos="fade-up"
+                 data-aos-delay="150">
+
+                <h3>
+
+                    AI Security
+
+                </h3>
+
+                <p>
+
+                    AI-powered cyber defense systems
+                    for modern cyber threats.
+
+                </p>
+
+            </div>
+
+            <div class="card"
+                 data-aos="fade-up"
+                 data-aos-delay="300">
+
+                <h3>
+
+                    Cloud Security
+
+                </h3>
+
+                <p>
+
+                    Secure and scalable cloud
+                    infrastructure protection solutions.
+
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <p>
+
+            © 2026 UcyAegis |
+            Secure The Future
+
+        </p>
+
+    </footer>
+
+    <!-- MAIN JS -->
+
+    <script src="{{ url_for('static',
+    filename='js/main.js') }}"></script>
+
+    <!-- AOS -->
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+    <script>
+
+        AOS.init({
+
+            duration: 1200,
+            once: true
+
+        });
+
+    </script>
+
+    <!-- PARTICLES -->
+
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+
+    <script>
+
+        particlesJS("particles-js", {
+
+            "particles": {
+
+                "number": {
+                    "value": 80
+                },
+
+                "color": {
+                    "value": "#3b82f6"
+                },
+
+                "shape": {
+                    "type": "circle"
+                },
+
+                "opacity": {
+                    "value": 0.5
+                },
+
+                "size": {
+                    "value": 3
+                },
+
+                "line_linked": {
+
+                    "enable": true,
+
+                    "distance": 150,
+
+                    "color": "#3b82f6",
+
+                    "opacity": 0.4,
+
+                    "width": 1
+
+                },
+
+                "move": {
+
+                    "enable": true,
+
+                    "speed": 2
+
+                }
+
+            }
+
+        });
+
+    </script>
+
+</body>
+
+</html>
