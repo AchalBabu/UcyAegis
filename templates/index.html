@@ -77,8 +77,11 @@
             <h1>UcyAegis</h1>
 
         </div>
+        <div class="menu-toggle" id="menu-toggle">
+        ☰
+        </div>
 
-<ul>
+<ul id="nav-links">
 
     <li><a href="#about">About</a></li>
 
@@ -356,7 +359,8 @@
 
     width:360px;
 
-    height:550px;
+    height:85vh;
+    max-height:700px;
 
     background:#0f172a;
 
@@ -608,6 +612,17 @@ document.addEventListener("DOMContentLoaded", function(){
             sendGangaMessage();
         }
     });
+});
+
+</script>
+
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
 });
 
 </script>

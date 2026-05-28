@@ -35,8 +35,11 @@
             <h1>UcyAegis</h1>
 
         </div>
+        <div class="menu-toggle" id="menu-toggle">
+        ☰
+        </div>
 
-        <ul>
+        <ul id="nav-links">
 
             <li><a href="{{ url_for('home') }}">Home</a></li>
             <li><a href="{{ url_for('home') }}#about">About</a></li>
@@ -250,6 +253,17 @@
         });
 
     </script>
+
+<script>
+
+const menuToggle = document.getElementById("menu-toggle");
+const navLinks = document.getElementById("nav-links");
+
+menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+});
+
+</script>
 
 </body>
 
