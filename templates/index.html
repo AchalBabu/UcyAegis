@@ -360,6 +360,7 @@
     width:360px;
 
     height:85vh;
+
     max-height:700px;
 
     background:#0f172a;
@@ -377,6 +378,10 @@
     backdrop-filter:blur(10px);
 
     box-shadow:0 0 30px rgba(0,255,255,0.15);
+
+    display:flex;
+
+    flex-direction:column;
 }
 
 /* ===================================== */
@@ -421,7 +426,7 @@
 
 #ganga-messages{
 
-    height:420px;
+    flex:1;
 
     overflow-y:auto;
 
@@ -457,7 +462,7 @@
 }
 
 /* ===================================== */
-/* INPUT */
+/* INPUT AREA */
 /* ===================================== */
 
 #ganga-input-area{
@@ -471,38 +476,77 @@
     border-top:1px solid rgba(255,255,255,0.05);
 }
 
-#ganga-user-input{
+#ganga-input{
 
     flex:1;
 
-    background:#1e293b;
+    padding:12px;
 
     border:none;
 
     outline:none;
 
-    color:white;
-
-    padding:12px;
-
     border-radius:10px;
 }
 
-#ganga-send-btn{
+#ganga-send{
 
     margin-left:10px;
 
-    background:#00ffff;
+    padding:12px 16px;
 
     border:none;
-
-    padding:12px 16px;
 
     border-radius:10px;
 
     cursor:pointer;
+}
 
-    font-weight:bold;
+/* ===================================== */
+/* MOBILE RESPONSIVE */
+/* ===================================== */
+
+@media screen and (max-width:768px){
+
+    #ganga-chat-box{
+
+        width:95%;
+
+        height:90vh;
+
+        right:10px;
+
+        left:10px;
+
+        bottom:10px;
+
+        border-radius:15px;
+    }
+
+    #ganga-chat-btn{
+
+        bottom:15px;
+
+        right:15px;
+
+        padding:14px 18px;
+
+        font-size:14px;
+    }
+
+    #ganga-header{
+
+        padding:14px;
+
+        font-size:15px;
+    }
+
+    #ganga-messages{
+
+        font-size:13px;
+
+        padding:12px;
+    }
 }
 
 </style>
