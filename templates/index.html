@@ -379,7 +379,6 @@
 
     box-shadow:0 0 30px rgba(0,255,255,0.15);
 
-    display:flex;
 
     flex-direction:column;
 }
@@ -397,7 +396,6 @@
     padding:16px;
 
     display:flex;
-
     justify-content:space-between;
 
     align-items:center;
@@ -469,14 +467,20 @@
 
     display:flex;
 
+    align-items:center;
+
     padding:12px;
 
     background:#111827;
 
     border-top:1px solid rgba(255,255,255,0.05);
+
+    gap:10px;
+
+    flex-shrink:0;
 }
 
-#ganga-input{
+#ganga-user-input{
 
     flex:1;
 
@@ -489,7 +493,7 @@
     border-radius:10px;
 }
 
-#ganga-send{
+#ganga-send-btn{
 
     margin-left:10px;
 
@@ -561,14 +565,14 @@ function toggleGangaChat(){
 
     let chatBox = document.getElementById("ganga-chat-box");
 
-    if(chatBox.style.display === "block"){
+    if(chatBox.style.display === "flex"){
 
         chatBox.style.display = "none";
     }
 
     else{
 
-        chatBox.style.display = "block";
+        chatBox.style.display = "flex";
     }
 }
 
