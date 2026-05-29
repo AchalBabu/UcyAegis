@@ -20,7 +20,15 @@
 <!-- ===================================== -->
 
 <button id="ganga-chat-btn" onclick="toggleGangaChat()">
-    🌸 Chat with Ganga
+
+    <img 
+        src="{{ url_for('static', filename='images/ganga.jpeg') }}" 
+        alt="Ganga"
+        class="ganga-avatar"
+    >
+
+    <span>Chat with Ganga</span>
+
 </button>
 
 <div id="ganga-chat-box">
@@ -327,7 +335,7 @@
 
     border:none;
 
-    padding:16px 22px;
+    padding:10px 18px;
 
     border-radius:50px;
 
@@ -338,12 +346,45 @@
     box-shadow:0 0 20px rgba(0,255,255,0.4);
 
     transition:0.3s;
+
+    display:flex;
+
+    align-items:center;
+
+    gap:12px;
+}
+
+.ganga-avatar{
+
+    width:70px;
+
+    height:70px;
+
+    object-fit:cover;
+
+    object-position:top;
+
+    border-radius:50%;
+
+    border:2px solid white;
+
+    box-shadow:0 0 15px rgba(0,255,255,0.6);
+}
+
+#ganga-chat-btn span{
+
+    font-size:20px;
+
+    font-weight:700;
+
+    color:#ffffff;
 }
 
 #ganga-chat-btn:hover{
 
     transform:scale(1.05);
 }
+
 
 /* ===================================== */
 /* CHAT BOX */
