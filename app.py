@@ -1,14 +1,10 @@
-from flask import Flask, render_template, request, flash, redirect, url_for, jsonify
+from flask import Flask, render_template, request, flash, redirect, url_for,jsonify
 from flask_mail import Mail, Message
 from ganga import bot_response
-import os
 
 app = Flask(__name__)
 
-# =========================
 # SECRET KEY
-# =========================
-
 app.secret_key = "change-this-secret"
 
 # =========================
@@ -18,13 +14,21 @@ app.secret_key = "change-this-secret"
 app.config['MAIL_SERVER'] = 'smtp.gmail.com'
 app.config['MAIL_PORT'] = 587
 app.config['MAIL_USE_TLS'] = True
-app.config['MAIL_USE_SSL'] = False
+app.config['MAIL_USERNAME'] = "theachal123@gmail.com"
+app.config['MAIL_PASSWORD'] = "sztilrkkvnxhtrup"
+app.config['MAIL_DEFAULT_SENDER'] = "theachal123@gmail.com"
 
-# Render Environment Variables
-app.config['MAIL_USERNAME'] = os.getenv('MAIL_USERNAME')
-app.config['MAIL_PASSWORD'] = os.getenv('MAIL_PASSWORD')
+# import os
 
-app.config['MAIL_DEFAULT_SENDER'] = os.getenv('MAIL_USERNAME')
+# app.config['MAIL_SERVER'] = 'smtp.gmail.com'
+# app.config['MAIL_PORT'] = 587
+# app.config['MAIL_USE_TLS'] = True
+# app.config['MAIL_USE_SSL'] = False
+
+# app.config['MAIL_USERNAME'] = os.environ.get('MAIL_USERNAME')
+# app.config['MAIL_PASSWORD'] = os.environ.get('MAIL_PASSWORD')
+
+# app.config['MAIL_DEFAULT_SENDER'] = os.environ.get('MAIL_USERNAME')
 
 mail = Mail(app)
 
@@ -37,10 +41,9 @@ def home():
     return render_template('index.html')
 
 # =========================
-# CHATBOT API
+# PRODUCTS PAGE
 # =========================
-
-@app.route('/chat', methods=['POST'])
+@app.route("/chat", methods=["POST"])
 def chat():
 
     data = request.get_json()
@@ -52,10 +55,6 @@ def chat():
     return jsonify({
         "reply": response
     })
-
-# =========================
-# PRODUCTS PAGE
-# =========================
 
 @app.route('/products')
 def products():
@@ -69,32 +68,32 @@ def products():
 def contact():
     return render_template('contact.html')
 
+@app.route("/cyberaware")
+def cyberaware():
+    return render_template("cyberaware.html")
+
 # =========================
 # CONTACT FORM SUBMIT
 # =========================
+
+@app.route("/", methods=["GET", "POST"])
+
 
 @app.route('/send-message', methods=['POST'])
 def send_message():
 
     try:
 
-        # Form Data
         name = request.form.get('name')
         email = request.form.get('email')
         user_message = request.form.get('message')
 
-        # Check Environment Variables
-        if not app.config['MAIL_USERNAME'] or not app.config['MAIL_PASSWORD']:
-            return "ERROR: MAIL ENV VARIABLES NOT FOUND"
-
-        # Create Email
         msg = Message(
             subject=f"UcyAegis Contact Form | {name}",
-            sender=app.config['MAIL_USERNAME'],
-            recipients=[app.config['MAIL_USERNAME']]
+            sender="theachal123@gmail.com",
+            recipients=["theachal123@gmail.com"]
         )
 
-        # Email Body
         msg.body = f"""
 New Contact Form Submission
 
@@ -110,7 +109,6 @@ Message:
 ==============================
 """
 
-        # Send Email
         mail.send(msg)
 
         flash(
@@ -120,7 +118,7 @@ Message:
 
     except Exception as e:
 
-        print("MAIL ERROR:", e)
+        print(e)
 
         flash(
             f"Error Sending Message: {e}",
@@ -134,4 +132,4 @@ Message:
 # =========================
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    app.run(debug=True) 

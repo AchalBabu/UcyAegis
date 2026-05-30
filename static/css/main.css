@@ -165,7 +165,7 @@ nav a:hover{
 ========================= */
 
 .hero{
-    min-height:100vh;
+    min-height:60vh;
 
     display:flex;
     flex-direction:column;
@@ -831,5 +831,158 @@ footer{
 
     .hero{
         padding-top:150px;
+    }
+    
+}
+
+/* ===================================== */
+/* FOOTER */
+/* ===================================== */
+
+.cyber-footer{
+
+    background:#020617;
+
+    padding:60px 10% 20px;
+
+    border-top:1px solid rgba(0,255,255,0.1);
+
+    margin-top:80px;
+}
+
+.footer-container{
+
+    display:grid;
+
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+    gap:40px;
+}
+
+.footer-box h3{
+
+    color:#00ffff;
+
+    margin-bottom:20px;
+
+    font-size:22px;
+}
+
+.footer-box p,
+.footer-box li{
+
+    color:#cbd5e1;
+
+    line-height:1.8;
+
+    font-size:15px;
+}
+
+.footer-box ul{
+
+    list-style:none;
+
+    padding:0;
+}
+
+.footer-box ul li{
+
+    margin-bottom:10px;
+}
+
+.footer-box ul li a{
+
+    color:#cbd5e1;
+
+    text-decoration:none;
+
+    transition:0.3s;
+}
+
+.footer-box ul li a:hover{
+
+    color:#00ffff;
+
+    padding-left:5px;
+}
+
+/* SOCIAL ICONS */
+
+.social-icons{
+
+    display:flex;
+
+    gap:15px;
+
+    margin-top:15px;
+}
+
+.social-icons a{
+
+    width:45px;
+
+    height:45px;
+
+    display:flex;
+
+    align-items:center;
+
+    justify-content:center;
+
+    border-radius:50%;
+
+    background:#0f172a;
+
+    color:#00ffff;
+
+    text-decoration:none;
+
+    font-size:18px;
+
+    transition:0.3s;
+
+    border:1px solid rgba(0,255,255,0.2);
+}
+
+.social-icons a:hover{
+
+    transform:translateY(-5px);
+
+    background:#00ffff;
+
+    color:#020617;
+
+    box-shadow:0 0 20px #00ffff;
+}
+
+/* COPYRIGHT */
+
+.footer-bottom{
+
+    text-align:center;
+
+    margin-top:50px;
+
+    padding-top:20px;
+
+    border-top:1px solid rgba(255,255,255,0.08);
+
+    color:#94a3b8;
+
+    font-size:14px;
+}
+
+/* MOBILE */
+
+@media screen and (max-width:768px){
+
+    .cyber-footer{
+
+        padding:50px 25px 20px;
+    }
+
+    .footer-container{
+
+        gap:30px;
     }
 }
