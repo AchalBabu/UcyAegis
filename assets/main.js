@@ -187,19 +187,29 @@ setInterval(() => {
 }, 4000);
 
 document.addEventListener("DOMContentLoaded", () => {
-    const form = document.querySelector('form[name="contact"]');
+  const form = document.querySelector('form[name="contact"]');
+  const successMessage = document.getElementById("success-message");
 
-    if (form) {
-        form.addEventListener("submit", function () {
-            setTimeout(() => {
-                form.innerHTML = `
-                    <div class="success-box">
-                        <h3>✅ Thank You!</h3>
-                        <p>Your enquiry has been submitted successfully.</p>
-                        <p>Our team will contact you shortly.</p>
-                    </div>
-                `;
-            }, 500);
-        });
-    }
+  if (form) {
+    form.addEventListener("submit", function (e) {
+      e.preventDefault();
+
+      const formData = new FormData(form);
+
+      fetch("/", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: new URLSearchParams(formData).toString(),
+      })
+      .then(() => {
+        form.style.display = "none";
+        successMessage.style.display = "block";
+      })
+      .catch((error) => {
+        alert("Something went wrong. Please try again.");
+      });
+    });
+  }
 });
