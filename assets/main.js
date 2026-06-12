@@ -185,3 +185,21 @@ setInterval(() => {
 
   slides[currentSlide].classList.add('active');
 }, 4000);
+
+document.addEventListener("DOMContentLoaded", () => {
+    const form = document.querySelector('form[name="contact"]');
+
+    if (form) {
+        form.addEventListener("submit", function () {
+            setTimeout(() => {
+                form.innerHTML = `
+                    <div class="success-box">
+                        <h3>✅ Thank You!</h3>
+                        <p>Your enquiry has been submitted successfully.</p>
+                        <p>Our team will contact you shortly.</p>
+                    </div>
+                `;
+            }, 500);
+        });
+    }
+});
