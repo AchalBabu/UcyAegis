@@ -860,11 +860,13 @@ textarea {
   position: relative;
   max-width: 800px;
   margin: auto;
-  min-height: 250px;
+  /* min-height: 250px; */
 }
 
 .testimonial-slide {
-  position: absolute;
+  /* position: absolute; */
+  display: none;
+  text-align: center;
   width: 100%;
   opacity: 0;
   transform: translateX(50px);
