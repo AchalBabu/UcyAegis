@@ -108,6 +108,12 @@ function createGangaAi() {
   `;
 
   document.body.appendChild(widget);
+  const greeting = document.createElement("div");
+  greeting.className = "ganga-greeting";
+  greeting.innerHTML = '<button type="button" aria-label="Dismiss greeting">×</button><strong>Hi, I’m Ganga AI!</strong>Need help with services, products or training? I’m here to help.';
+  widget.appendChild(greeting);
+  greeting.querySelector("button").addEventListener("click", () => greeting.remove());
+  window.setTimeout(() => { if (greeting.isConnected) greeting.remove(); }, 9000);
 
   const panelBody = widget.querySelector(".ganga-body");
   const form = widget.querySelector(".ganga-foot");
@@ -140,6 +146,7 @@ function createGangaAi() {
 
   launch.addEventListener("click", () => {
     widget.classList.add("open");
+    if (greeting.isConnected) greeting.remove();
     input.focus();
   });
 
@@ -159,15 +166,59 @@ function createGangaAi() {
 
 createGangaAi();
 
-const slides = document.querySelectorAll('.testimonial-slide');
+const testimonialSlides = document.querySelectorAll('.testimonial-slide');
+if (testimonialSlides.length > 1) {
+  let testimonialIndex = 0;
+  window.setInterval(() => {
+    testimonialSlides[testimonialIndex].classList.remove('active');
+    testimonialIndex = (testimonialIndex + 1) % testimonialSlides.length;
+    testimonialSlides[testimonialIndex].classList.add('active');
+  }, 4000);
+}
 
-let currentSlide = 0;
 
-setInterval(() => {
-  slides[currentSlide].classList.remove('active');
 
-  currentSlide = (currentSlide + 1) % slides.length;
+// Homepage hero slideshow
+(function initHomeShowcase() {
+  const root = document.querySelector(".home-showcase");
+  if (!root) return;
+  const slides = Array.from(root.querySelectorAll(".showcase-slide"));
+  const dots = Array.from(root.querySelectorAll(".showcase-dot"));
+  let active = 0;
+  let timer;
 
-  slides[currentSlide].classList.add('active');
-}, 4000);
-
+  function show(index) {
+    active = (index + slides.length) % slides.length;
+    slides.forEach((slide, i) => {
+      slide.classList.toggle("active", i === active);
+      slide.setAttribute("aria-hidden", i === active ? "false" : "true");
+    });
+    dots.forEach((dot, i) => {
+      dot.classList.toggle("active", i === active);
+      dot.setAttribute("aria-current", i === active ? "true" : "false");
+    });
+  }
+  function restart() {
+    window.clearInterval(timer);
+    root.classList.remove("is-playing");
+    // Reflow restarts the CSS progress indicator for each slide.
+    void root.offsetWidth;
+    root.classList.add("is-playing");
+    timer = window.setInterval(() => show(active + 1), 5500);
+  }
+  root.querySelector(".showcase-prev").addEventListener("click", () => { show(active - 1); restart(); });
+  root.querySelector(".showcase-next").addEventListener("click", () => { show(active + 1); restart(); });
+  dots.forEach((dot, i) => dot.addEventListener("click", () => { show(i); restart(); }));
+  root.addEventListener("mouseenter", () => { window.clearInterval(timer); root.classList.remove("is-playing"); });
+  root.addEventListener("mouseleave", restart);
+  root.addEventListener("focusin", () => { window.clearInterval(timer); root.classList.remove("is-playing"); });
+  root.addEventListener("focusout", (event) => { if (!root.contains(event.relatedTarget)) restart(); });
+  root.querySelectorAll("[data-open-ganga]").forEach(button => {
+    button.addEventListener("click", () => {
+      const launcher = document.querySelector(".ganga-launch");
+      if (launcher) launcher.click();
+    });
+  });
+  show(0);
+  restart();
+})();

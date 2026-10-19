@@ -1,9 +1,5 @@
-# UcyAegis
+UcyAegis updated website package
 
-UcyAegis is a cyber security **products, platform & services** company founded by Achal Babu.
+Open worksite/index.html locally to preview. The homepage has four same-size carousel slides, a Ganga AI helper on every slide, and the About page includes Achal Babu as featured founder plus five compact team-function cards. Team role cards are functional placeholders, not named real employees. Training links to https://training.ucyaegis.pro.
 
-We build the UcyAegis Platform — a single, unified foundation for cyber security
-products — starting with **PhisAegis**, our first product, launching soon.
-Alongside the platform, we deliver hands-on security services: website security
-audits, monthly website security maintenance, web application VAPT, incident
-response, and security retainers — backed by training and certifications.
+Keep the assets folder beside the HTML files. Upload the complete worksite folder to hosting.

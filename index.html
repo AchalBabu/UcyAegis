@@ -18,7 +18,9 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
         <button class="nav-toggle" type="button" aria-label="Open navigation" aria-expanded="false">&#9776;</button>
         <div class="nav-links">
           <a href="index.html">Home</a>
-          <a href="products.html">Products</a> <a href="services.html">Services</a>          <!-- <a href="training-certification.html">Training</a> -->
+          <a href="products.html">Products</a>
+          <a href="services.html">Services</a>
+          <a href="https://training.ucyaegis.pro" target="_blank" rel="noopener noreferrer">Training</a>
           <a href="resources.html">Resources</a>
           <a href="about.html">About</a>
           <a href="careers.html">Careers</a>
@@ -27,31 +29,65 @@ href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"
       </nav>
     </header>
 
-    <main>
-      <section class="hero">
-        <div class="hero-inner">
-          <div>
-            <p class="eyebrow">Cyber security products, platform &amp; services</p>
-            <h1>UcyAegis</h1>
-            <p class="lead">We build the UcyAegis Platform and the products that run on it — starting with <strong>PhisAegis</strong>, launching soon — backed by hands-on security services for teams that need expert hands right now.</p>
-            <div class="hero-actions">
-              <a class="button primary" href="products.html">Explore the platform</a>
-              <a class="button secondary" href="services.html">See our services</a>
+
+
+      <!-- Responsive homepage feature carousel -->
+      <section class="home-showcase" aria-label="UcyAegis featured products and services">
+        <div class="showcase-track">
+          <article class="showcase-slide active">
+            <img src="assets/services.png" alt="UcyAegis website security audits and protection services">
+            <div class="showcase-overlay">
+              <span class="showcase-kicker">01 / Security Services</span>
+              <h1>Find the gaps.<br><span>Strengthen your defence.</span></h1>
+              <p>Practical website security audits, application testing and incident support to help you protect what matters.</p>
+              <div class="showcase-actions"><a class="button primary" href="services.html">Explore Services <span aria-hidden="true">→</span></a><a class="button outline" href="contact.html">Talk to our team</a></div>
+              <span class="showcase-caption"><i class="fa-solid fa-shield-halved"></i> Security built for the real world</span>
             </div>
-          </div>
-          <div class="signal-panel" aria-label="Security operations overview">
-            <div class="logo-orbit"><img src="assets/ucyaegis-logo.jpeg" alt="UcyAegis shield logo"></div>
-            <div>
-              <div class="metric-grid">
-                <div class="metric"><strong>01</strong><span>Product live soon</span></div>
-                <div class="metric"><strong>1</strong><span>Unified platform</span></div>
-                <div class="metric"><strong>360&#176;</strong><span>Risk view</span></div>
-              </div>
-              <p class="ticker">PhisAegis &bull; UcyAegis Platform &bull; threat detection &bull; automated response</p>
+          </article>
+          <article class="showcase-slide">
+            <img src="assets/soc.jpeg" alt="Security operations centre and incident response">
+            <div class="showcase-overlay">
+              <span class="showcase-kicker">02 / Detection & Response</span>
+              <h2>See the signal.<br><span>Respond with confidence.</span></h2>
+              <p>Explore our vision for security operations, threat monitoring and incident response support.</p>
+              <div class="showcase-actions"><a class="button primary" href="contact.html">Discuss your needs <span aria-hidden="true">→</span></a><a class="button outline" href="about.html">Meet UcyAegis</a></div>
+              <span class="showcase-caption"><i class="fa-solid fa-tower-broadcast"></i> Built around clarity and response</span>
             </div>
-          </div>
+          </article>
+          <article class="showcase-slide">
+            <img src="assets/phishaegis.jpeg" alt="PhisAegis phishing defence product concept">
+            <div class="showcase-overlay">
+              <span class="showcase-kicker">03 / Product Preview · Launching Soon</span>
+              <h2>Phishing defence,<br><span>with a smarter signal.</span></h2>
+              <p>Meet PhisAegis, our upcoming product concept for helping teams spot suspicious links and email threats.</p>
+              <div class="showcase-actions"><a class="button primary" href="products.html">Explore Products <span aria-hidden="true">→</span></a><a class="button outline" href="contact.html">Get early access</a></div>
+              <span class="showcase-caption"><i class="fa-solid fa-fingerprint"></i> One platform. A growing product family.</span>
+            </div>
+          </article>
+          <article class="showcase-slide showcase-ganga">
+            <img src="assets/homepage-slide-4.jpg" alt="Ganga AI assistant">
+            <div class="showcase-overlay">
+              <span class="showcase-kicker">04 / UcyAegis AI Assistant</span>
+              <h2>Meet <span>Ganga AI.</span></h2>
+              <p>Namaste! Main Ganga AI hoon — products, services, training aur cybersecurity ke sawalon mein aapki guide.</p>
+              <div class="showcase-actions"><button class="button primary" type="button" data-open-ganga>Chat with Ganga AI <span aria-hidden="true">→</span></button><a class="button outline" href="resources.html">Explore resources</a></div>
+              <span class="showcase-caption"><i class="fa-solid fa-wand-magic-sparkles"></i> Helpful guidance, one question at a time</span>
+            </div>
+          </article>
+        </div>
+        <button class="showcase-arrow showcase-prev" type="button" aria-label="Previous slide">‹</button>
+        <button class="showcase-arrow showcase-next" type="button" aria-label="Next slide">›</button>
+        <div class="showcase-progress"><span></span></div>
+        <div class="showcase-dots" aria-label="Slideshow navigation">
+          <button class="showcase-dot active" type="button" aria-label="Slide 1: Security services"></button>
+          <button class="showcase-dot" type="button" aria-label="Slide 2: Detection and response"></button>
+          <button class="showcase-dot" type="button" aria-label="Slide 3: PhisAegis product"></button>
+          <button class="showcase-dot" type="button" aria-label="Slide 4: Ganga AI"></button>
         </div>
       </section>
+
+    <main>
+      <!-- Main hero removed: homepage now leads with full-banner slideshow. -->
       <section class="trust-stats">
   <div class="stat-box">
     <h3>PhisAegis</h3>
