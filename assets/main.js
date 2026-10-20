@@ -204,7 +204,7 @@ if (testimonialSlides.length > 1) {
     // Reflow restarts the CSS progress indicator for each slide.
     void root.offsetWidth;
     root.classList.add("is-playing");
-    timer = window.setInterval(() => show(active + 1), 5500);
+    timer = window.setInterval(() => show(active + 1), 3500);
   }
   root.querySelector(".showcase-prev").addEventListener("click", () => { show(active - 1); restart(); });
   root.querySelector(".showcase-next").addEventListener("click", () => { show(active + 1); restart(); });
